@@ -1,6 +1,21 @@
 class Casino {
-    // Write code here
-};
+  // Write code here
+  constructor(name, isFakeCoin) {
+    this.name = name;
+    this.timesPlayed = 0;
+    this.isFakeCoin = isFakeCoin;
+  }
+  playGame(betAmount) {
+    this.timesPlayed += 1;
+    if ((Math.random() <= 0.5) | (this.isFakeCoin === true)) {
+      console.log(`Casino ${this.name} Wins!`);
+    } else {
+      this.timesPlayed + 1;
+      console.log("Player wins!");
+      console.log(`You have won ${betAmount * (this.timesPlayed + 1)}`);
+    }
+  }
+}
 
 // TESTS
 const myCasino = new Casino("HackerU Casino");
